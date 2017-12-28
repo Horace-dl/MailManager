@@ -1,0 +1,27 @@
+﻿<Window x:Class="MailManager.SendMail"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="SendMail" Height="300" Width="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width='*'></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Content="Receiver" Grid.Row="0" Grid.Column="0"></Label>
+        <TextBox Name="tbReceiver" Grid.Row="0" Grid.Column="1" Text="{Binding Path=Receiver}"></TextBox>
+        <Label Content="CC" Grid.Row="1" Grid.Column="0"></Label>
+        <TextBox Name="tbCCName" Grid.Row="1" Grid.Column="1" Text="{Binding Path=CCName}"></TextBox>
+        <Label Grid.Row="2" Grid.Column="0">Title</Label>
+        <TextBox Name="tbTitle" Grid.Row="2" Grid.Column="1" Text="{Binding Path=MailTitle}"></TextBox>
+        <RichTextBox Name="rtbBodyText" Grid.Row="3" Grid.ColumnSpan="2"></RichTextBox>
+        <Button Name="btSend" Grid.Row="4" Grid.Column="0" Click="btSend_Click">Send</Button>
+    </Grid>
+</Window>
